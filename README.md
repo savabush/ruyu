@@ -13,6 +13,10 @@ docker-compose up -d
 ```bash
 docker-compose exec web python manage.py createsuperuser 
 ```
+3.1. Могут быть проблемы с запуском, так как БД еще не успела инициализироваться, во избежание проблем прогоним миграции снова
+```bash
+docker-compose exec web python manage.py migrate
+```
 4. Готово! Можно пользоваться:
 - [Админка](http://0.0.0.0:8000/admin/)
 - [Swagger](http://0.0.0.0:8000/api/schema/swagger-ui/#/)
